@@ -12,13 +12,18 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj).toFormat(format);
   });
 
+  eleventyConfig.addFilter("readableDate", (dateObj) => {
+    if (!dateObj) return "";
+    return DateTime.fromJSDate(dateObj).toFormat("MMMM d, yyyy");
+  });
+
   eleventyConfig.addGlobalData("now", () => new Date());
 
   return {
     dir: {
       input: "src",
       output: "_site",
-      includes: "_includes",
+      includes: "_includes"
     },
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
