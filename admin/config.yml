@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main # or your working branch like lazy-gallery-load
+
+media_folder: "src/images/uploads" # Where uploaded images are stored
+public_folder: "/images/uploads"   # Public URL path for images
+
+collections:
+  - name: "entries"
+    label: "Journal Entries"
+    folder: "src/entries"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Location", name: "location", widget: "string", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

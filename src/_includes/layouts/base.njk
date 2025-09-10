@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% if title %}{{ title }} · Remain Off{% else %}Remain Off{% endif %}</title>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}A quiet capsule of places, people, and reflections.{% endif %}" />
+    
+    <!-- Optional: preload fonts or add ambient typefaces -->
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+
+  <body>
+    <main class="site-content">
+      {% block content %}{% endblock %}
+    </main>
+
+    <!-- Optional: footer or ambient nav -->
+    <footer class="site-footer">
+      <p>© {{ now | date("yyyy") }} Remain Off</p>
+    </footer>
+  </body>
+</html>

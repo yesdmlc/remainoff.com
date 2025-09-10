@@ -1,0 +1,30 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<article class="entry">
+  <header class="entry-header">
+    <h1 class="entry-title">{{ title }}</h1>
+    <p class="entry-meta">
+      <time datetime="{{ date }}">{{ date | readableDate }}</time>
+      {% if location %} · <span class="entry-location">{{ location }}</span>{% endif %}
+    </p>
+    {% if tags %}
+      <ul class="entry-tags">
+        {% for tag in tags %}
+          <li>#{{ tag }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </header>
+
+  {% if image %}
+    <figure class="entry-image">
+      <img src="{{ image }}" alt="Image for {{ title }}">
+    </figure>
+  {% endif %}
+
+  <section class="entry-body">
+    {{ content | safe }}
+  </section>
+</article>
+{% endblock %}
