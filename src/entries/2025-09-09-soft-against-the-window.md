@@ -4,6 +4,7 @@ date: 2025-09-07
 location: "Burnaby"
 tags: ["quiet", "transit", "evening"]
 image: "/images/uploads/window-soft-light.jpg"
+layout: layouts/base.njk
 ---
 
 The train moved slowly through the outer edges of the city, where the buildings begin to thin and the trees lean in closer. I sat by the window, watching the light soften against the glass — a kind of warmth that doesn’t ask to be noticed.
