@@ -1,30 +1,28 @@
 {% extends "layouts/base.njk" %}
-
 {% block content %}
-<section class="hero">
-  <figure class="hero-image">
-    <img src="/images/hero.jpg" alt="Remain Off hero image" />
-  </figure>
-  <div class="hero-text">
-    <h1 class="site-title">Remain Off</h1>
-    <p class="site-subtitle">A quiet capsule of places, people, and reflections.</p>
-  </div>
-</section>
-
-<section class="recent-entries">
-  <h2 class="section-heading">Recent Reflections</h2>
-  <ul class="entry-list">
-    {% for entry in collections.entries | reverse | slice(0, 6) %}
-      <li class="entry-preview">
-        <a href="{{ entry.url }}">
-          {% if entry.data.image %}
-            <img src="{{ entry.data.image }}" alt="Image for {{ entry.data.title }}" class="entry-thumb" />
-          {% endif %}
-          <h3 class="entry-title">{{ entry.data.title }}</h3>
-          <p class="entry-date">{{ entry.data.date | readableDate }}</p>
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-</section>
+    <section class="hero">
+        <figure class="hero-image">
+            <img src="/images/hero.jpg" alt="Remain Off hero image"/>
+        </figure>
+        <div class="hero-text">
+            <h1 class="site-title">Remain Off</h1>
+            <p class="site-subtitle">A quiet capsule of places, people, and reflections.</p>
+        </div>
+    </section>
+    <section class="recent-entries">
+        <h2 class="section-heading">Recent Reflections</h2>
+        <ul class="entry-list">
+            {% for entry in collections.entries | reverse | slice(0, 6) %}
+                <li class="entry-preview">
+                    <a href="{{ entry.url }}">
+                        {% if entry.data.image %}
+                            <img src="{{ entry.data.image }}" alt="Image for {{ entry.data.title }}" class="entry-thumb"/>
+                        {% endif %}
+                        <h3 class="entry-title">{{ entry.data.title }}</h3>
+                        <p class="entry-date">{{ entry.date | date("MMMM d, yyyy") }}</p>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock %}
