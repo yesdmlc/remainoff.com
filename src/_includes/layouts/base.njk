@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% if title %}{{ title }} · Remain Off{% else %}Remain Off{% endif %}</title>
-    <meta name="description" content="{% if description %}{{ description }}{% else %}A quiet capsule of places, people, and reflections.{% endif %}" />
-    <link rel="stylesheet" href="/assets/styles.css" />
-  </head>
-
-  <body>
-    <main class="site-content">
-      {% block content %}{% endblock %}
-    </main>
-
-    <!-- Optional: footer or ambient nav -->
-    <footer class="site-footer">
-      <p>© {{ now | date("yyyy") }} remainoff.com</p>
-    </footer>
-  </body>
-</html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>
+            {% if title %}
+                {{ title }} · Remain Off{% else %}Remain Off{% endif %}
+        </title>
+        <meta name="description" content="{% if description %}{{ description }}{% else %}A quiet capsule of places, people, and reflections.{% endif %}"/>
+        <link rel="stylesheet" href="/assets/styles.css"/>
+    </head>
+    <body>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/entries/">Journal</a></li>
+                <li><a href="/tags/">Themes</a></li>
+                <li><a href="/note/">Note</a></li>
+            </ul>
+        </nav>
+        <main class="site-content"> {% block content %}{% endblock %}
+            </main>
+            <!-- Optional: footer or ambient nav -->
+            <footer class="site-footer">
+                <p>© {{ now | date("yyyy") }} remainoff.com</p>
+            </footer>
+        </body>
+    </html>
