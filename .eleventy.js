@@ -1,19 +1,23 @@
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
+  // Passthroughs
   eleventyConfig.addPassthroughCopy("src/images/uploads");
   eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("src/admin/config.yml");
-  eleventyConfig.addPassthroughCopy({ "src/admin/config.yml": "admin/config.yml" });
   eleventyConfig.addPassthroughCopy("src/_redirects");
+  eleventyConfig.addPassthroughCopy({ "src/admin/config.yml": "admin/config.yml" });
+  eleventyConfig.addPassthroughCopy({ "src/admin/index.html": "admin/index.html" });
 
-
+  // Collections
   eleventyConfig.addCollection("entries", function (collectionApi) {
-  const entries = collectionApi.getFilteredByGlob("src/entries/*.md");
-  console.log("Entries found:", entries.map(e => e.inputPath));
-  return entries;
-});
+    const entries = collectionApi.getFilteredByGlob("src/entries/*.md");
+    if (process.env.NODE_ENV !== "production") {
+      console.log("Entries found:", entries.map(e => e.inputPath));
+    }
+    return entries;
+  });
 
+  // Filters
   eleventyConfig.addFilter("date", (dateObj, format = "MMMM d, yyyy") => {
     if (!dateObj) return "";
     return DateTime.fromJSDate(dateObj).toFormat(format);
@@ -24,6 +28,7 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj).toFormat("MMMM d, yyyy");
   });
 
+  // Global data
   eleventyConfig.addGlobalData("now", () => new Date());
 
   return {

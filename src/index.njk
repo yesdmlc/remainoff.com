@@ -27,10 +27,22 @@
         </ul>
     </section>
 
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
-      const hash = window.location.hash;
-      if (hash.includes("invite_token=") || hash.includes("confirmation_token=") || hash.includes("recovery_token=")) {
-        window.location.replace("/admin/" + hash);
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.init();
+
+        const hash = window.location.hash;
+
+        // Process confirmation_token directly on homepage
+        if (hash.includes("confirmation_token=")) {
+          window.netlifyIdentity.open("login");
+        }
+
+        // Redirect invite_token and recovery_token to /admin/
+        if (hash.includes("invite_token=") || hash.includes("recovery_token=")) {
+          window.location.replace("/admin/" + hash);
+        }
       }
     </script>
 {% endblock %}
