@@ -8,25 +8,24 @@
     <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-    <!-- Initialize Identity Widget BEFORE CMS -->
+    <!-- Initialize Identity Widget -->
     <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.init();
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.init();
 
-        // Handle invite token explicitly
-        const token = window.location.hash.match(/invite_token=([^&]+)/);
-        if (token) {
-          window.netlifyIdentity.open("signup");
-        }
-
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
+          // Handle invite token
+          const tokenMatch = window.location.hash.match(/invite_token=([^&]+)/);
+          if (tokenMatch) {
+            window.netlifyIdentity.open("signup");
           }
-        });
-      }
+
+          // Optional: redirect after login
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
     </script>
 
     <!-- Netlify CMS -->
