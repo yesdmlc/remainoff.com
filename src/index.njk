@@ -12,14 +12,10 @@
     <section class="recent-entries">
         <h2 class="section-heading">Recent Reflections</h2>
         <ul class="entry-list">
-            {% for entry in collections.entries | reverse | slice(0, 6) %}
+            {% for entry in collections.entries %}
                 <li class="entry-preview">
                     <a href="{{ entry.url }}">
-                        {% if entry.data.image %}
-                            <img src="{{ entry.data.image }}" alt="Image for {{ entry.data.title }}" class="entry-thumb"/>
-                        {% endif %}
-                        <h3 class="entry-title">{{ entry.data.title }}</h3>
-                        <p class="entry-date">{{ entry.date | date("MMMM d, yyyy") }}</p>
+                        <h3>{{ entry.data.title }}</h3>
                     </a>
                 </li>
             {% endfor %}
