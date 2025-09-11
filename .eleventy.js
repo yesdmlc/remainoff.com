@@ -4,6 +4,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images/uploads");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("src/admin/config.yml");
+  eleventyConfig.addPassthroughCopy({ "src/admin/config.yml": "admin/config.yml" });
+  eleventyConfig.addPassthroughCopy("src/_redirects");
+
 
   eleventyConfig.addCollection("entries", function (collectionApi) {
   const entries = collectionApi.getFilteredByGlob("src/entries/*.md");
