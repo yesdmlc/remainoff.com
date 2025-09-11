@@ -2,7 +2,7 @@
 title: "Soft Against the Window"
 date: 2025-09-07
 location: "Burnaby"
-tags: ["quiet", "transit", "evening"]
+tags: ["entries", "quiet", "transit", "evening"]
 image: "/images/uploads/window-soft-light.jpg"
 layout: layouts/entry.njk
 permalink: "/entries/2025-09-09-soft-against-the-window/"
