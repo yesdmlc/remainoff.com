@@ -131,6 +131,10 @@ NAVIGATION STYLE
   color: #000;
 }
 
+.admin-link {
+  display: none;
+}
+
 
 
 /*
