@@ -55,15 +55,18 @@ HOMEPAGE STYLE
   gap: 2rem;
 }
 
+/* Entry Preview Container */
 .entry-preview {
   background-color: #fdfdfd;
   padding: 1rem;
   border-left: 3px solid #eee;
   transition: border-color 0.3s ease;
+  border-radius: 4px;
 }
 
 .entry-preview:hover {
   border-color: #aaa;
+  background-color: #f9f9f9;
 }
 
 .entry-thumb {
@@ -72,15 +75,30 @@ HOMEPAGE STYLE
   margin-bottom: 1rem;
 }
 
+/* Entry Title */
 .entry-title {
+  font-family: 'Georgia', serif;
   font-size: 1.1rem;
   margin: 0.5rem 0;
   color: #2c2c2c;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
+/* Entry Date */
 .entry-date {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #777;
+  margin-top: 0.25rem;
+}
+
+/* Entry Image */
+.entry-thumb {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
 
