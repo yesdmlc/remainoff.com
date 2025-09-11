@@ -3,10 +3,13 @@ const { DateTime } = require("luxon");
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images/uploads");
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("src/admin/config.yml");
 
   eleventyConfig.addCollection("entries", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/entries/*.md");
-  });
+  const entries = collectionApi.getFilteredByGlob("src/entries/*.md");
+  console.log("Entries found:", entries.map(e => e.inputPath));
+  return entries;
+});
 
   eleventyConfig.addFilter("date", (dateObj, format = "MMMM d, yyyy") => {
     if (!dateObj) return "";
