@@ -29,27 +29,27 @@
 
     <!-- Identity widget and CMS loader -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-    <div id="cms" style="display: none;"></div>
+<script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+<div id="cms" style="display: none;"></div>
 
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.init();
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.init();
 
-        const hash = window.location.hash;
+    const hash = window.location.hash;
 
-        // Process confirmation_token directly on homepage
-        if (hash.includes("confirmation_token=")) {
-          setTimeout(() => {
-            window.netlifyIdentity.open("login");
-            document.getElementById("cms").style.display = "block";
-          }, 500);
-        }
+    if (hash.includes("confirmation_token=")) {
+      setTimeout(() => {
+        window.netlifyIdentity.open("login");
+        document.getElementById("cms").style.display = "block";
+        CMS.init({ config: '/admin/config.yml' }); // 👈 This line fixes the error
+      }, 500);
+    }
 
-        // Redirect invite_token and recovery_token to /admin/
-        if (hash.includes("invite_token=") || hash.includes("recovery_token=")) {
-          window.location.replace("/admin/" + hash);
-        }
-      }
-    </script>
+    if (hash.includes("invite_token=") || hash.includes("recovery_token=")) {
+      window.location.replace("/admin/" + hash);
+    }
+  }
+</script>
+
 {% endblock %}
