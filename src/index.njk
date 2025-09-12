@@ -27,7 +27,11 @@
         </ul>
     </section>
 
+    <!-- Identity widget and CMS loader -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <div id="cms" style="display: none;"></div>
+
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.init();
@@ -36,7 +40,10 @@
 
         // Process confirmation_token directly on homepage
         if (hash.includes("confirmation_token=")) {
-          window.netlifyIdentity.open("login");
+          setTimeout(() => {
+            window.netlifyIdentity.open("login");
+            document.getElementById("cms").style.display = "block";
+          }, 500);
         }
 
         // Redirect invite_token and recovery_token to /admin/
