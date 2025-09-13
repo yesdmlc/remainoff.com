@@ -1,58 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>
-            {% if title %}
-                {{ title }} · Remain Off{% else %}Remain Off{% endif %}
-        </title>
-        <meta name="description" content="{% if description %}{{ description }}{% else %}A quiet capsule of places, people, and reflections.{% endif %}"/>
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/styles.css"/>
-    </head>
-    <body>
-        <nav class="site-nav">
-            <div class="logo">remainoff</div>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/entries/">Journal</a>
-                </li>
-                <li>
-                    <a href="/tags/">Themes</a>
-                </li>
-                <li>
-                    <a href="/about/">About</a>
-                </li>
-                <li class="admin-link">
-                    <a href="/admin/">Update</a>
-                </li>
-            </ul>
-        </nav>
-        <main class="site-content"> {% block content %}{% endblock %}
-            </main>
-            <!-- Optional: footer or ambient nav -->
-            <footer class="site-footer">
-                <p>© {{ now | date("yyyy") }} remainoff.com</p>
-            </footer>
-            <script>
-                if (window
-                        .location
-                        .search
-                        .includes("admin=true")) {
-                    document
-                        .querySelector(".admin-link")
-                        .style
-                        .display = "inline-block";
-                } else {
-                    document
-                        .querySelector(".admin-link")
-                        .style
-                        .display = "none";
-                }
-            </script>
-        </body>
-    </html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+      {% if title %}
+        {{ title }} · Remain Off
+      {% else %}
+        Remain Off
+      {% endif %}
+    </title>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}A quiet capsule of places, people, and reflections.{% endif %}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles.css"/>
+  </head>
+  <body class="{{ page.url == '/' ? 'home' : '' }}">
+    <nav class="site-nav">
+      <div class="logo">remainoff</div>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/entries/">Journal</a></li>
+        <li><a href="/tags/">Themes</a></li>
+        <li><a href="/about/">About</a></li>
+        <li class="admin-link"><a href="/admin/">Update</a></li>
+      </ul>
+    </nav>
+
+    {% block hero %}{% endblock %}
+
+    <main class="site-content">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <p>© {{ now | date("yyyy") }} remainoff.com</p>
+    </footer>
+
+    <script>
+      if (window.location.search.includes("admin=true")) {
+        document.querySelector(".admin-link").style.display = "inline-block";
+      } else {
+        document.querySelector(".admin-link").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
