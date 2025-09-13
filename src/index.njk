@@ -6,9 +6,19 @@
     <img src="/images/uploads/remainoff-cover-image.jpg" alt="Remain Off hero image"/>
   </figure>
   <div class="hero-text">
-    <h1 class="site-title">Remain Off</h1>
-    <p class="site-subtitle">A quiet capsule of places, people, and reflections.</p>
+    <h1 class="site-title">Leaving gently, arriving slowly.</h1>
+    <p class="site-subtitle">Letting go, holding on, and documenting the quiet weight of change.</p>
   </div>
+</section>
+
+<section class="travel-line">
+  <ul class="travel-stops">
+    <li class="stop visited">Vancouver</li>
+    <li class="stop current">Tokyo</li>
+    <li class="stop upcoming">Seoul</li>
+    <li class="stop upcoming">Hong Kong</li>
+    <li class="stop upcoming">Chiang Mai</li>
+  </ul>
 </section>
 {% endblock %}
 
@@ -19,9 +29,9 @@
     {% for entry in collections.entries %}
       <li class="entry-preview">
         <a href="{{ entry.url }}">
-          {% if entry.data.image %}
-            <img src="{{ entry.data.image }}" alt="Image for {{ entry.data.title }}" class="entry-thumb"/>
-          {% endif %}
+          <div class="cover-wrapper">
+            <img src="{{ entry.data.image }}" alt="Image for {{ entry.data.title }}" class="entry-thumb">
+          </div>
           <h3 class="entry-title">{{ entry.data.title }}</h3>
           <p class="entry-date">{{ entry.date | date("MMMM d, yyyy") }}</p>
         </a>
