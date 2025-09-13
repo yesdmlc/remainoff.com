@@ -1,4 +1,56 @@
 
+
+
+
+/*
+NAVIGATION STYLE
+*/
+.site-nav {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.site-nav a:hover {
+  color: #000;
+}
+
+.admin-link {
+  display: none;
+}
+
+/* Responsive Navigation */
+@media (max-width: 600px) {
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .site-nav {
+    text-align: center;
+  }
+}
+
+
+/*--------------------------------------*/
+
+
+
 /*
 HOMEPAGE STYLE
 */
@@ -101,39 +153,39 @@ HOMEPAGE STYLE
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
-
-
-
-/*
-NAVIGATION STYLE
-*/
-.site-nav {
-  background-color: #f4f4f4;
-  padding: 1rem;
-  border-bottom: 1px solid #ddd;
+/* Responsive Entry Grid */
+@media (max-width: 768px) {
+  .entry-list {
+    grid-template-columns: 1fr;
+  }
 }
 
-.site-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
+/* Responsive Typography */
+@media (max-width: 600px) {
+  .site-title {
+    font-size: 2rem;
+  }
+
+  .site-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.3rem;
+  }
+
+  .entry-title {
+    font-size: 1rem;
+  }
+
+  .entry-body p {
+    font-size: 1rem;
+  }
 }
 
-.site-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
 
-.site-nav a:hover {
-  color: #000;
-}
 
-.admin-link {
-  display: none;
-}
+/*--------------------------------------*/
 
 
 
