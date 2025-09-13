@@ -1,5 +1,18 @@
 {% extends "layouts/base.njk" %}
 
+{% block head %}
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ excerpt or 'A quiet reflection from Remain Off.' }}">
+  <meta property="og:image" content="{{ image | url }}">
+  <meta property="og:url" content="{{ page.url | url }}">
+  <meta property="og:type" content="article">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ excerpt or 'A quiet reflection from Remain Off.' }}">
+  <meta name="twitter:image" content="{{ image | url }}">
+{% endblock %}
+
 {% block content %}
 <article class="entry">
 
