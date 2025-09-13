@@ -40,10 +40,9 @@
                         .getElementById("cms-root")
                         .style
                         .display = "block";
-                    // Wait until CMS is available before initializing
                     const initCMS = () => {
                         if (window.CMS && typeof CMS.init === "function") {
-                            CMS.init({config: '/admin/config.yml'});
+                            CMS.init({config: 'https://remainoff.com/admin/config.yml'}); // 👈 Absolute path
                         } else {
                             setTimeout(initCMS, 100);
                         }
