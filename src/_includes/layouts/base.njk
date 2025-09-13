@@ -20,9 +20,8 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/entries/">Journal</a></li>
-        <li><a href="/tags/">Themes</a></li>
+        <li><a href="/tags/">By Tags</a></li>
         <li><a href="/about/">About</a></li>
-        <li class="admin-link"><a href="/admin/">Update</a></li>
       </ul>
     </nav>
 
@@ -35,13 +34,5 @@
     <footer class="site-footer">
       <p>© {{ now | date("yyyy") }} remainoff.com</p>
     </footer>
-
-    <script>
-      if (window.location.search.includes("admin=true")) {
-        document.querySelector(".admin-link").style.display = "inline-block";
-      } else {
-        document.querySelector(".admin-link").style.display = "none";
-      }
-    </script>
   </body>
 </html>
