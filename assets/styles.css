@@ -144,6 +144,20 @@ HOMEPAGE STYLE
 
 /* Travel Line */
 
+.travel-heading {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #2c2c2c;
+  text-align: center;
+}
+
+.travel-context {
+  font-size: 0.95rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
 .travel-line {
   margin: 2rem auto 3rem;
   max-width: 800px;
@@ -201,6 +215,26 @@ HOMEPAGE STYLE
   border-color: #ccc;
   background-color: #fff;
 }
+
+
+@media (max-width: 600px) {
+  .travel-stops {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .travel-stops::before {
+    display: none; /* Hide the horizontal line on small screens */
+  }
+
+  .stop {
+    width: auto;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
 
 
 /* Recent Entries */
