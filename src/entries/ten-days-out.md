@@ -2,8 +2,8 @@
 title: "Ten Days Out"
 date: 2025-09-13
 location: "Vancouver"
-tags: ["entries", "Relocate To Asia"]
-image: "/images/uploads/ten-days-oot.jpg"
+tags: ["entries", "back-to-asia"]
+image: "/images/uploads/ten-days-out.jpg"
 layout: layouts/entry.njk
 permalink: "/entries/ten-days-out/"
 ---
