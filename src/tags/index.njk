@@ -1,0 +1,19 @@
+<section class="tags">
+  <h1 class="section-heading">Tags</h1>
+  <ul class="tag-list">
+    {% for tag in collections.allTags %}
+      <li class="tag-block">
+        <h2 class="tag-name">#{{ tag }}</h2>
+        <ul class="tag-entries">
+          {% for entry in collections.entries | filterByTag(tag) %}
+            <li>
+              <a href="{{ entry.url }}">
+                {{ entry.data.title }} <span class="entry-date">({{ entry.date | date("MMM d, yyyy") }})</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

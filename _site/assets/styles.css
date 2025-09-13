@@ -1,56 +1,4 @@
 
-
-
-
-/*
-NAVIGATION STYLE
-*/
-.site-nav {
-  background-color: #f4f4f4;
-  padding: 1rem;
-  border-bottom: 1px solid #ddd;
-}
-
-.site-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-}
-
-.site-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.site-nav a:hover {
-  color: #000;
-}
-
-.admin-link {
-  display: none;
-}
-
-/* Responsive Navigation */
-@media (max-width: 600px) {
-  .site-nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-  }
-
-  .site-nav {
-    text-align: center;
-  }
-}
-
-
-/*--------------------------------------*/
-
-
-
 /*
 HOMEPAGE STYLE
 */
@@ -107,18 +55,15 @@ HOMEPAGE STYLE
   gap: 2rem;
 }
 
-/* Entry Preview Container */
 .entry-preview {
   background-color: #fdfdfd;
   padding: 1rem;
   border-left: 3px solid #eee;
   transition: border-color 0.3s ease;
-  border-radius: 4px;
 }
 
 .entry-preview:hover {
   border-color: #aaa;
-  background-color: #f9f9f9;
 }
 
 .entry-thumb {
@@ -127,65 +72,46 @@ HOMEPAGE STYLE
   margin-bottom: 1rem;
 }
 
-/* Entry Title */
 .entry-title {
-  font-family: 'Georgia', serif;
   font-size: 1.1rem;
   margin: 0.5rem 0;
   color: #2c2c2c;
-  font-weight: 600;
-  line-height: 1.4;
 }
 
-/* Entry Date */
 .entry-date {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #777;
-  margin-top: 0.25rem;
-}
-
-/* Entry Image */
-.entry-thumb {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 0.75rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-}
-
-/* Responsive Entry Grid */
-@media (max-width: 768px) {
-  .entry-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Responsive Typography */
-@media (max-width: 600px) {
-  .site-title {
-    font-size: 2rem;
-  }
-
-  .site-subtitle {
-    font-size: 1rem;
-  }
-
-  .section-heading {
-    font-size: 1.3rem;
-  }
-
-  .entry-title {
-    font-size: 1rem;
-  }
-
-  .entry-body p {
-    font-size: 1rem;
-  }
 }
 
 
 
-/*--------------------------------------*/
+
+/*
+NAVIGATION STYLE
+*/
+.site-nav {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.site-nav a:hover {
+  color: #000;
+}
 
 
 
@@ -214,6 +140,12 @@ body {
   margin-bottom: 2rem;
   border-bottom: 1px solid #ddd;
   padding-bottom: 1rem;
+}
+
+.entry-title {
+  font-size: 2.2rem;
+  margin: 0;
+  color: #2c2c2c;
 }
 
 .entry-meta {
@@ -267,51 +199,3 @@ body {
   margin: 4rem 0 2rem;
 }
 
-
-
-
-/*--------------------------------------*/
-
-/*
-TAGS PAGE STYLE
-*/
-
-.tags {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 0 1rem;
-}
-
-.tag-list {
-  list-style: none;
-  padding: 0;
-}
-
-.tag-block {
-  margin-bottom: 3rem;
-}
-
-.tag-name {
-  font-size: 1.4rem;
-  color: #2c2c2c;
-  margin-bottom: 1rem;
-  font-family: 'Georgia', serif;
-}
-
-.tag-entries li {
-  margin-bottom: 0.5rem;
-}
-
-.tag-entries a {
-  text-decoration: none;
-  color: #444;
-}
-
-.tag-entries a:hover {
-  color: #000;
-}
-
-.entry-date {
-  font-size: 0.8rem;
-  color: #888;
-}
