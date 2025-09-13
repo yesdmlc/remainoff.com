@@ -2,11 +2,22 @@
 
 {% block content %}
 <article class="entry">
+
+  {% if image %}
+    <figure class="entry-image">
+      <div class="cover-wrapper">
+        <img src="{{ image }}" alt="Image for {{ title }}">
+      </div>
+    </figure>
+  {% endif %}
+
   <header class="entry-header">
     <h1 class="entry-title">{{ title }}</h1>
     <p class="entry-meta">
       <time datetime="{{ date }}">{{ date | readableDate }}</time>
-      {% if location %} · <span class="entry-location">{{ location }}</span>{% endif %}
+      {% if location %}
+        · <span class="entry-location">{{ location }}</span>
+      {% endif %}
     </p>
     {% if tags %}
       <ul class="entry-tags">
@@ -17,14 +28,18 @@
     {% endif %}
   </header>
 
-  {% if image %}
-    <figure class="entry-image">
-      <img src="{{ image }}" alt="Image for {{ title }}">
-    </figure>
-  {% endif %}
-
   <section class="entry-body">
     {{ content | safe }}
   </section>
+
+  <section class="entry-navigation">
+    {% if pagination.previous %}
+      <a href="{{ pagination.previous.url }}" class="nav-link prev">← Previous: {{ pagination.previous.data.title }}</a>
+    {% endif %}
+    {% if pagination.next %}
+      <a href="{{ pagination.next.url }}" class="nav-link next">Next: {{ pagination.next.data.title }} →</a>
+    {% endif %}
+  </section>
+
 </article>
 {% endblock %}

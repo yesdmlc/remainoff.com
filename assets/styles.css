@@ -1,5 +1,21 @@
 
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background-color: #f9f8f6;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #999;
+  margin: 4rem 0 2rem;
+}
 
 
 /*
@@ -14,6 +30,20 @@ NAVIGATION STYLE
   text-transform: lowercase;
   margin-right: 2rem;
 }
+
+.logo a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  color: #2c2c2c;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #000;
+}
+
 
 /* Navigation Container */
 .site-nav {
@@ -76,9 +106,9 @@ HOMEPAGE STYLE
 */
 /* Hero Section */
 .hero {
-  margin: 0;
-  padding: 0;
-  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }
 
 .hero-image img {
@@ -221,14 +251,23 @@ HOMEPAGE STYLE
 SINGLE ENTRY STYLE
 */
 /* Base Reset */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Georgia', serif;
-  background-color: #f9f8f6;
-  color: #333;
-  line-height: 1.6;
+
+.cover-wrapper {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
+.cover-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 
 /* Layout */
 .site-content {
@@ -275,10 +314,23 @@ body {
   text-align: center;
 }
 
-.entry-image img {
-  max-width: 100%;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.entry-navigation {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.entry-navigation a {
+  text-decoration: none;
+  color: #444;
+}
+
+.entry-navigation a:hover {
+  color: #000;
 }
 
 /* Body */
@@ -286,15 +338,6 @@ body {
   margin-bottom: 1.5rem;
   font-size: 1.05rem;
 }
-
-/* Footer */
-.site-footer {
-  text-align: center;
-  font-size: 0.8rem;
-  color: #999;
-  margin: 4rem 0 2rem;
-}
-
 
 
 
