@@ -27,36 +27,33 @@
     </section>
     <!-- Identity widget and CMS loader -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-<div id="cms-root" style="display: none;"></div>
-
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.init();
-
-    const hash = window.location.hash;
-
-    if (hash.includes("confirmation_token=")) {
-      setTimeout(() => {
-        window.netlifyIdentity.open("login");
-        document.getElementById("cms-root").style.display = "block";
-
-        // Wait until CMS is available before initializing
-        const initCMS = () => {
-          if (window.CMS && typeof CMS.init === "function") {
-            CMS.init({ config: '/admin/config.yml' });
-          } else {
-            setTimeout(initCMS, 100);
-          }
-        };
-        initCMS();
-      }, 500);
-    }
-
-    if (hash.includes("invite_token=") || hash.includes("recovery_token=")) {
-      window.location.replace("/admin/" + hash);
-    }
-  }
-</script>
-
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <div id="cms-root" style="display: none;"></div>
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.init();
+            const hash = window.location.hash;
+            if (hash.includes("confirmation_token=")) {
+                setTimeout(() => {
+                    window.netlifyIdentity.open("login");
+                    document
+                        .getElementById("cms-root")
+                        .style
+                        .display = "block";
+                    // Wait until CMS is available before initializing
+                    const initCMS = () => {
+                        if (window.CMS && typeof CMS.init === "function") {
+                            CMS.init({config: '/admin/config.yml'});
+                        } else {
+                            setTimeout(initCMS, 100);
+                        }
+                    };
+                    initCMS();
+                }, 500);
+            }
+            if (hash.includes("invite_token=") || hash.includes("recovery_token=")) {
+                window.location.replace("/admin/" + hash);
+            }
+        }
+    </script>
 {% endblock %}
