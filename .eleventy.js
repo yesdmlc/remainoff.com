@@ -5,8 +5,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images/uploads");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("src/_redirects");
-  eleventyConfig.addPassthroughCopy({ "src/admin/config.yml": "admin/config.yml" });
-  eleventyConfig.addPassthroughCopy({ "src/admin/index.html": "admin/index.html" });
 
   // Collections
   eleventyConfig.addCollection("entries", function (collectionApi) {
