@@ -76,35 +76,42 @@ HOMEPAGE STYLE
 */
 /* Hero Section */
 .hero {
-  text-align: center;
-  margin: 4rem auto 3rem;
-  padding: 0 1rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 .hero-image img {
-  max-width: 100%;
-  max-height: 60vh;
+  width: 100%;
+  height: 70vh;
   object-fit: cover;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1.5rem 2rem;
   border-radius: 6px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.hero-text {
-  margin-top: 2rem;
-}
-
 .site-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin: 0;
   color: #2c2c2c;
-  font-family: 'Georgia', serif;
 }
 
 .site-subtitle {
   font-size: 1.2rem;
-  color: #666;
+  color: #555;
   margin-top: 0.5rem;
 }
+
 
 /* Recent Entries */
 .recent-entries {
