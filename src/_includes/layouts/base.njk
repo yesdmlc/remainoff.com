@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/styles.css"/>
   </head>
-  <body class="{{ page.url == '/' ? 'home' : '' }}">
+  <body{% if page.url == '/' %} class="home"{% endif %}>
     <nav class="site-nav">
       <div class="logo">remainoff</div>
       <ul>
