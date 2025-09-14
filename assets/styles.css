@@ -282,15 +282,26 @@ RECENT ENTRIES — LINEAR FEED
   font-weight: 600;
 }
 
+.entry-title a {
+  text-decoration: none;
+  color: #222;
+}
+
+.entry-title a:hover {
+  text-decoration: underline;
+}
+
 .entry-date {
   font-size: 0.85rem;
-  color: #777;
+  color: #666;
+  margin-top: 0.25rem;
 }
 
 .entry-excerpt {
   font-size: 0.95rem;
   color: #444;
   margin-top: 0.5rem;
+  line-height: 1.5;
 }
 
 
@@ -304,6 +315,18 @@ SINGLE ENTRY STYLE
   max-width: 700px;
   margin: 4rem auto;
   padding: 0 1rem;
+}
+
+.entry-container {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.entry-container:hover {
+  background-color: #f0f0f0;
 }
 
 .entry-header {

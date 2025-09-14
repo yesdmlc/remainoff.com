@@ -50,6 +50,12 @@ module.exports = function (eleventyConfig) {
     return words.join(" ") + "…";
   });
 
+  eleventyConfig.addFilter("stripHtml", function(content) {
+  if (!content) return "";
+  return content.replace(/<[^>]*>/g, "");
+});
+
+
   // Global data
   eleventyConfig.addGlobalData("now", () => new Date());
 
