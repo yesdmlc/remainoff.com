@@ -35,7 +35,7 @@
 <section class="recent-entries">
   <h2 class="section-heading">Recent Reflections</h2>
   <ul class="entry-feed">
-    {% for entry in collections.entries %}
+    {% for entry in collections.entries | reverse %}
     <li class="entry-preview">
       <div class="entry-container">
         <a href="{{ entry.url }}">
