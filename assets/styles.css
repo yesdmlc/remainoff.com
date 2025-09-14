@@ -434,6 +434,7 @@ GRID LINK PAGE STYLE
   margin: 0;
 }
 
+  
 .grid-item {
   position: relative;
 }
@@ -443,6 +444,10 @@ GRID LINK PAGE STYLE
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
+}
+
+.grid-item a:hover img {
+  opacity: 0.85;
 }
 
 .grid-title-overlay {
