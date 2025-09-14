@@ -1,10 +1,10 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-<section class="tag-archive">
-  <h1 class="section-heading">Entries Tagged “{{ tag }}”</h1>
+<section class="entry-archive">
+  <h1 class="section-heading">All Reflections</h1>
   <ul class="entry-feed">
-    {% for entry in collections.entries | filterByTag(tag) %}
+    {% for entry in collections.entries | reverse %}
     <li class="entry-preview">
       <div class="entry-container">
         <a href="{{ entry.url }}">
