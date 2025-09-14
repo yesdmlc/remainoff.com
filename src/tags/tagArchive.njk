@@ -4,7 +4,6 @@ pagination:
   size: 1
   alias: tag
 permalink: "/tags/{{ tag | slug }}/"
-tags: tagPage
 layout: layouts/base.njk
 ---
 
@@ -16,7 +15,7 @@ layout: layouts/base.njk
   <ul class="tag-entries">
     {% for post in collections.entries %}
       {% set postTags = post.data.tags | default([]) %}
-      {% if postTags | length > 0 and postTags.indexOf(tag) >= 0 %}
+      {% if postTags | length > 0 and postTags.indexOf(tag) != -1 %}
         <li>
           <a href="{{ post.url }}">{{ post.data.title }}</a>
           <div class="entry-date">{{ post.date | readableDate }}</div>
