@@ -4,6 +4,7 @@ date: 2025-09-13
 location: "Vancouver"
 tags: ["entries", "back-to-asia"]
 image: "/images/uploads/ten-days-out.jpg"
+gridFeatured: true
 layout: layouts/entry.njk
 permalink: "/entries/ten-days-out/"
 ---
