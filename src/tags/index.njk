@@ -1,26 +1,24 @@
+---
+pagination:
+  data: collections.entries
+  size: 1000
+  alias: tag
+  filter: (entry) => entry.data.tags && entry.data.tags.includes(tag)
+permalink: "/tags/{{ tag | slug }}/"
+tags: tagPage
+layout: layouts/base.njk
+---
+
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-<section class="tag-archive">
-  <h1 class="section-heading">Entries Tagged “{{ tag }}”</h1>
-  <ul class="entry-feed">
-    {% for entry in collections.entries | filterByTag(tag) %}
-    <li class="entry-preview">
-      <div class="entry-container">
-        <a href="{{ entry.url }}">
-          <div class="cover-wrapper">
-            <img src="{{ entry.data.image }}" alt="Image for {{ entry.data.title }}" class="entry-thumb">
-          </div>
-        </a>
-        <h3 class="entry-title">
-          <a href="{{ entry.url }}">{{ entry.data.title }}</a>
-        </h3>
-        <p class="entry-date">{{ entry.date | date("MMMM d, yyyy") }}</p>
-        <p class="entry-excerpt">
-          {{ entry.templateContent | stripHtml | limitWords(40) }}
-        </p>
-      </div>
-    </li>
+<section class="tags">
+  <h1 class="section-heading">Browse by Tag</h1>
+  <ul class="tag-list">
+    {% for tag in collections.allTags %}
+      <li>
+        <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
+      </li>
     {% endfor %}
   </ul>
 </section>

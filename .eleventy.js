@@ -37,12 +37,9 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj).toFormat("MMMM d, yyyy");
   });
 
-  eleventyConfig.addFilter("filterByTag", function (entries, tag) {
-    return entries.filter(entry => {
-      const tags = entry.data.tags || [];
-      return tags.includes(tag);
-    });
-  });
+  eleventyConfig.addCollection("tagPages", function (collectionApi) {
+  return collectionApi.getFilteredByTag("tagPage");
+});
 
   eleventyConfig.addFilter("limitWords", function (content, wordLimit = 40) {
     if (!content) return "";
