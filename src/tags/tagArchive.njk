@@ -14,14 +14,13 @@ layout: layouts/base.njk
   <h1 class="tag-name">{{ tag }}</h1>
   <ul class="tag-entries">
     {% for post in collections.entries %}
-      {% set postTags = post.data.tags | default([]) %}
-      {% if postTags.indexOf(tag) != -1 %}
-        <li>
-          <a href="{{ post.url }}">{{ post.data.title }}</a>
-          <div class="entry-date">{{ post.date | readableDate }}</div>
-        </li>
-      {% endif %}
-    {% endfor %}
+  {% if post.data.tags and post.data.tags.indexOf(tag) != -1 %}
+    <li>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      <div class="entry-date">{{ post.date | readableDate }}</div>
+    </li>
+  {% endif %}
+{% endfor %}
   </ul>
 </section>
 {% endblock %}
