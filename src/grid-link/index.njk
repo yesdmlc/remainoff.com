@@ -1,0 +1,18 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<section class="linkinbio-grid">
+  <h1 class="section-heading">More from Instagram</h1>
+  <ul class="grid-list">
+    {% for entry in collections.entries %}
+      {% if entry.data.featuredOnInstagram %}
+        <li class="grid-item">
+          <a href="{{ entry.url }}">
+            <img src="{{ entry.data.image }}" alt="Image for {{ entry.data.title }}">
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

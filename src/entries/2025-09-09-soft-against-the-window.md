@@ -4,6 +4,7 @@ date: 2025-09-07
 location: "Burnaby"
 tags: ["entries", "quiet", "transit", "evening"]
 image: "/images/uploads/window-soft-light.jpg"
+gridFeatured: true
 layout: layouts/entry.njk
 permalink: "/entries/2025-09-09-soft-against-the-window/"
 ---

@@ -412,3 +412,36 @@ TAGS PAGE STYLE
   font-size: 0.8rem;
   color: #888;
 }
+
+
+/* 
+GRID LINK PAGE STYLE
+*/
+
+
+.linkinbio-grid {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+}
+
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grid-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.grid-item a:hover img {
+  opacity: 0.85;
+}
