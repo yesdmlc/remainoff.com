@@ -1,56 +1,48 @@
 {% extends "layouts/base.njk" %}
-
 {% block hero %}
-  <section class="hero">
-    <figure class="hero-image">
-      <img src="/images/uploads/remainoff-cover-image.jpg" alt="Remain Off hero image" />
-    </figure>
-    <div class="hero-text">
-      <h1 class="site-title">Leaving gently, arriving slowly.</h1>
-      <p class="site-subtitle">Letting go, holding on, and documenting the quiet weight of change.</p>
-    </div>
-  </section>
-
-  <section class="travel-line">
-    <h2 class="section-heading">Follow My Journey for 2025</h2>
-    <!-- Reminder: when I leave a place, change 'stop current' to 'stop visited' -->
-    <section class="travel-line">
-      <h2 class="travel-heading">Where I’m Headed</h2>
-      <p class="travel-context">
-        A personal line of movement — places I’ll arrive in, linger, and leave. Updated as memory catches up.<br>
-        First departure: September 23, 2025.
-      </p>
-      <ul class="travel-stops">
-        <li class="stop current">Vancouver</li>
-        <li class="stop upcoming">Hong Kong</li>
-        <li class="stop upcoming">Chiang Mai</li>
-        <li class="stop upcoming">Bangkok</li>
-        <li class="stop upcoming">More Stops Soon</li>
-      </ul>
+    <section class="hero">
+        <figure class="hero-image">
+            <img src="/images/uploads/remainoff-cover-image.jpg" alt="Remain Off hero image"/>
+        </figure>
+        <div class="hero-text">
+            <h1 class="site-title">Leaving gently, arriving slowly.</h1>
+            <p class="site-subtitle">Letting go, holding on, and documenting the quiet weight of change.</p>
+        </div>
     </section>
-  </section>
-{% endblock %}
-
-{% block content %}
-  <section class="recent-entries">
-    <h2 class="section-heading">Recent Reflections</h2>
-    <div class="entry-feed">
-      {% for entry in collections.entries %}
-        <article class="entry-preview">
-          <a href="{{ entry.url }}">
-            <div class="cover-wrapper">
-              <img src="{{ entry.data.image }}" alt="Image for {{ entry.data.title }}" class="entry-thumb" />
-            </div>
-            <div class="entry-info">
-              <h3 class="entry-title">{{ entry.data.title }}</h3>
-              <p class="entry-date">{{ entry.date | date("MMMM d, yyyy") }}</p>
-              {% if entry.data.excerpt %}
-                <p class="entry-excerpt">{{ entry.data.excerpt }}</p>
-              {% endif %}
-            </div>
-          </a>
-        </article>
-      {% endfor %}
-    </div>
-  </section>
-{% endblock %}
+    <section class="travel-line">
+        <h2 class="section-heading">Follow My Journey for 2025</h2>
+        <!-- Reminder: when I leave a place, change 'stop current' to 'stop visited' -->
+        <section class="travel-line">
+            <h2 class="travel-heading">Where I’m Headed</h2>
+            <p class="travel-context">
+                A personal line of movement — places I’ll arrive in, linger, and leave. Updated as memory catches up.<br>
+                    First departure: September 23, 2025.
+                </p>
+                <ul class="travel-stops">
+                    <li class="stop current">Vancouver</li>
+                    <li class="stop upcoming">Hong Kong</li>
+                    <li class="stop upcoming">Chiang Mai</li>
+                    <li class="stop upcoming">Bangkok</li>
+                    <li class="stop upcoming">More Stops Soon</li>
+                </ul>
+            </section>
+        </section>
+    {% endblock %}
+    {% block content %}
+        <section class="recent-entries">
+            <h2 class="section-heading">Recent Reflections</h2>
+            <div class="entry-feed">
+                {% for entry in collections.entries %}
+                    <li class="entry-preview">
+                        <a href="{{ entry.url }}">
+                            <div class="cover-wrapper">
+                                <img src="{{ entry.data.image }}" alt="Image for {{ entry.data.title }}" class="entry-thumb"></div>
+                                <h3 class="entry-title">{{ entry.data.title }}</h3>
+                                <p class="entry-date">{{ entry.date | date("MMMM d, yyyy") }}</p>
+                                <p class="entry-excerpt">{{ entry.templateContent | limitWords(40) }}</p>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endblock %}

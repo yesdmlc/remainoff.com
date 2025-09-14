@@ -44,6 +44,12 @@ module.exports = function (eleventyConfig) {
     });
   });
 
+  eleventyConfig.addFilter("limitWords", function (content, wordLimit = 40) {
+    if (!content) return "";
+    const words = content.split(/\s+/).slice(0, wordLimit);
+    return words.join(" ") + "…";
+  });
+
   // Global data
   eleventyConfig.addGlobalData("now", () => new Date());
 
