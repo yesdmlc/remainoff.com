@@ -1,15 +1,8 @@
 ---
-pagination:
-  data: collections.entries
-  size: 1000
-  alias: tag
-  filter: (entry) => entry.data.tags && entry.data.tags.includes(tag)
-permalink: "/tags/{{ tag | slug }}/"
-tags: tagPage
+title: "Browse by Tag"
 layout: layouts/base.njk
+permalink: "/tags/"
 ---
-
-{% extends "layouts/base.njk" %}
 
 {% block content %}
 <section class="tags">
