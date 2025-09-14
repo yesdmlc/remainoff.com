@@ -7,6 +7,9 @@ permalink: "/tags/"
 {% block content %}
 <section class="tags">
   <h1 class="section-heading">Browse by Tag</h1>
+
+  <p>Total tags: {{ collections.allTags.length }}</p>
+
   <ul class="tag-list">
     {% for tag in collections.allTags %}
       <li>
