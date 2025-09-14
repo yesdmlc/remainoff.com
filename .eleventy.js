@@ -15,6 +15,17 @@ module.exports = function (eleventyConfig) {
     return entries;
   });
 
+  eleventyConfig.addCollection("allTags", function (collectionApi) {
+    const tagSet = new Set();
+    collectionApi.getFilteredByGlob("src/entries/*.md").forEach(item => {
+      if ("tags" in item.data) {
+        let tags = Array.isArray(item.data.tags) ? item.data.tags : [item.data.tags];
+        tags.forEach(tag => tagSet.add(tag));
+      }
+    });
+    return [...tagSet].sort();
+  });
+
   // Filters
   eleventyConfig.addFilter("date", (dateObj, format = "MMMM d, yyyy") => {
     if (!dateObj) return "";
@@ -24,6 +35,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     if (!dateObj) return "";
     return DateTime.fromJSDate(dateObj).toFormat("MMMM d, yyyy");
+  });
+
+  eleventyConfig.addFilter("filterByTag", function (entries, tag) {
+    return entries.filter(entry => {
+      const tags = entry.data.tags || [];
+      return tags.includes(tag);
+    });
   });
 
   // Global data
