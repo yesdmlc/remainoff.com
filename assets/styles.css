@@ -434,14 +434,25 @@ GRID LINK PAGE STYLE
   margin: 0;
 }
 
+.grid-item {
+  position: relative;
+}
+
 .grid-item img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
-  transition: opacity 0.3s ease;
 }
 
-.grid-item a:hover img {
-  opacity: 0.85;
+.grid-title-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: 'Georgia', serif;
 }
