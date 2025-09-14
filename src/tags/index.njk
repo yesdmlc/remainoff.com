@@ -1,23 +1,28 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-<section class="tags">
-  <h1 class="section-heading">Tags</h1>
-  <ul class="tag-list">
-    {% for tag in collections.allTags %}
-      <li class="tag-block">
-        <h2 class="tag-name">#{{ tag }}</h2>
-        <ul class="tag-entries">
-          {% for entry in collections.entries | filterByTag(tag) %}
-            <li>
-              <a href="{{ entry.url }}">
-                {{ entry.data.title }} <span class="entry-date">({{ entry.date | date("MMM d, yyyy") }})</span>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </li>
+<section class="linkinbio-grid">
+  <h1 class="section-heading">More from Instagram</h1>
+  <ul class="grid-list">
+    {% for entry in collections.entries %}
+      {% if entry.data.gridFeatured %}
+        <li class="grid-item">
+          <a href="{{ entry.url }}">
+            <img src="{{ entry.data.image }}" alt="Image for {{ entry.data.title }}">
+          </a>
+        </li>
+      {% endif %}
     {% endfor %}
   </ul>
+
+  <!-- Debug: Show which entries are being picked up -->
+  <div class="debug-output">
+    <h2>Debug Output</h2>
+    <ul>
+      {% for entry in collections.entries %}
+        <li>{{ entry.data.title }} — gridFeatured: {{ entry.data.gridFeatured }}</li>
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 {% endblock %}
