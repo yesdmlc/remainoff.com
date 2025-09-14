@@ -15,7 +15,8 @@ layout: layouts/base.njk
   <h1 class="tag-name">{{ tag }}</h1>
   <ul class="tag-entries">
     {% for post in collections.entries %}
-      {% if post.data.tags and tag in post.data.tags %}
+      {% set postTags = post.data.tags | default([]) %}
+      {% if postTags | length > 0 and postTags.indexOf(tag) >= 0 %}
         <li>
           <a href="{{ post.url }}">{{ post.data.title }}</a>
           <div class="entry-date">{{ post.date | readableDate }}</div>
