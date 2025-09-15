@@ -396,24 +396,21 @@ SINGLE ENTRY STYLE
 
 
 /*
-TAGS PAGE STYLE
+TAG LISTING + TAG ARCHIVE STYLES
 */
 
-
-
-.tags {
+.tags,
+.tag-block {
   max-width: 800px;
   margin: 4rem auto;
   padding: 0 1rem;
 }
 
-.tag-list {
+.tag-list,
+.tag-entries {
   list-style: none;
   padding: 0;
-}
-
-.tag-block {
-  margin-bottom: 3rem;
+  margin: 0;
 }
 
 .tag-name {
@@ -421,15 +418,20 @@ TAGS PAGE STYLE
   color: #2c2c2c;
   margin-bottom: 1rem;
   font-family: 'Georgia', serif;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
 }
 
 .tag-entries li {
   margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
 }
 
 .tag-entries a {
   text-decoration: none;
   color: #444;
+  font-size: 1.1rem;
 }
 
 .tag-entries a:hover {
@@ -439,6 +441,7 @@ TAGS PAGE STYLE
 .entry-date {
   font-size: 0.8rem;
   color: #888;
+  margin-top: 0.25rem;
 }
 
 
