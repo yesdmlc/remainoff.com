@@ -17,12 +17,12 @@
 <article class="entry">
 
   {% if image %}
-    <figure class="entry-image">
-      <div class="cover-wrapper">
-        <img src="{{ image }}" alt="Image for {{ title }}">
-      </div>
-    </figure>
-  {% endif %}
+  <figure class="entry-image">
+    <div class="cover-wrapper">
+      <img class="entry-thumb" src="{{ image }}" alt="Image for {{ title }}">
+    </div>
+  </figure>
+{% endif %}
 
   <header class="entry-header">
     <h1 class="entry-title">{{ title }}</h1>
