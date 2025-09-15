@@ -240,121 +240,6 @@ HOMEPAGE STYLE
 }
 
 
-/* Travel Line */
-.travel-heading {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-  color: #2c2c2c;
-  text-align: center;
-}
-
-.travel-context {
-  font-size: 0.95rem;
-  color: #666;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.travel-line {
-  margin: 2rem auto 3rem;
-  max-width: 800px;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.travel-stops {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  position: relative;
-}
-
-.travel-stops::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: #ddd;
-  z-index: 0;
-}
-
-.stop {
-  position: relative;
-  z-index: 1;
-  background-color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #555;
-  border: 2px solid #ccc;
-}
-
-.stop.visited {
-  color: #aaa;
-  border-color: #eee;
-  background-color: #f4f4f4;
-}
-
-.stop.current {
-  color: #000;
-  border-color: #333;
-  background-color: #fffbe6;
-}
-
-.stop.upcoming {
-  color: #777;
-  border-color: #ccc;
-}
-
-@media (max-width: 600px) {
-  .travel-stops {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .travel-stops::before {
-    display: none;
-  }
-
-  .stop {
-    width: auto;
-    padding: 0.4rem 1rem;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 900px) and (min-width: 601px) {
-  .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 600px;
-    padding: 1.25rem 1.5rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-    border-radius: 6px;
-    text-align: center;
-  }
-
-  .site-title {
-    font-size: 2.4rem;
-    line-height: 1.2;
-  }
-
-  .site-subtitle {
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
-  }
-}
-
 @media (max-width: 900px) and (min-width: 601px) {
   .hero-text {
     top: 55%;
@@ -397,14 +282,141 @@ HOMEPAGE STYLE
   .hero-image .cover-wrapper {
     padding-top: 75%; /* slightly taller for mobile */
   }
+}
+
+
+/* TRAVEL SECTION on HOMEPAGE */
+.travel-heading {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #2c2c2c;
+  text-align: center;
+}
+
+.travel-context {
+  font-size: 0.95rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.travel-line {
+  background-color: #f5f4f2;
+  padding: 3rem 1rem;
+  margin: 4rem auto;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  max-width: 800px;
+}
+
+.travel-stops {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+}
+
+.travel-stops li {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  border: 2px solid #ccc;
+  flex: 1;
+  text-align: center;
+}
+
+.travel-stops li:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bbb;
+  font-size: 1rem;
+}
+
+.travel-line::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: #ddd;
+  margin: 0 auto 2rem;
+}
+
+.stop {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  border: 2px solid #ccc;
+}
+
+.stop.visited {
+  color: #aaa;
+  border-color: #eee;
+  background-color: #f4f4f4;
+}
+
+.stop.current {
+  color: #000;
+  border-color: #333;
+  background-color: #fffbe6;
+}
+
+.stop.upcoming {
+  color: #777;
+  border-color: #ccc;
+}
+
+@media (max-width: 900px) {
+  .travel-line {
+    padding: 2.5rem 1rem;
+    margin: 3rem auto;
+  }
 
   .travel-heading {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
   }
 
   .travel-context {
     font-size: 0.9rem;
     padding: 0 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .travel-stops {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .travel-stops li {
+    flex: none;
+    min-width: 120px;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .travel-stops li:not(:last-child)::after {
+    content: "→";
+    position: static;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    color: #bbb;
   }
 }
 
