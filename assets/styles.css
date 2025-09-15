@@ -257,7 +257,6 @@ RECENT ENTRIES — LINEAR FEED
   position: relative;
   width: 100%;
   padding-top: 56.25%; /* 16:9 aspect ratio as fallback */
-  background-color: #eee; /* debug color */
   overflow: hidden;
   border-radius: 6px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
