@@ -309,9 +309,10 @@ HOMEPAGE STYLE
 
 .travel-stops {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
   align-items: center;
-  position: relative;
   list-style: none;
   padding: 0;
   margin: 2rem 0 0;
@@ -327,18 +328,19 @@ HOMEPAGE STYLE
   font-weight: 500;
   color: #555;
   border: 2px solid #ccc;
-  flex: 1;
+  flex: none;
+  min-width: 120px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .travel-stops li:not(:last-child)::after {
   content: "→";
-  position: absolute;
-  right: -1.2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #bbb;
+  margin-left: 0.5rem;
   font-size: 1rem;
+  color: #bbb;
 }
 
 .travel-line::before {
