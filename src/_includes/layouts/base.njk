@@ -24,17 +24,30 @@
             </div>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/entries/">Journal</a></li>
-                <li><a href="/tags/">By Tags</a></li>
+                <li><a href="/entries/">Journal Archive</a></li>
                 <li><a href="/about/">About</a></li>
-                <li><a href="/grid-link/">Grid</a></li>
             </ul>
         </nav>
         {% block hero %}{% endblock %}
         <main class="site-content"> {% block content %}{% endblock %}
             </main>
             <footer class="site-footer">
-                <p>© {{ now | date("yyyy") }} remainoff.com</p>
-            </footer>
+  <nav class="footer-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/entries/">Journal Archive</a></li>
+      <li><a href="/tags/">View by Tags</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/grid-link/">Grid List</a></li>
+    </ul>
+  </nav>
+  <div class="footer-social">
+    <a href="https://instagram.com/mainobbit" target="_blank" rel="noopener">Instagram</a>
+    <span>·</span>
+    <a href="https://www.facebook.com/mainochengg" target="_blank" rel="noopener">Facebook</a>
+  </div>
+  <p class="footer-note">© 2025 remainoff.com — documenting the quiet weight of change.</p>
+</footer>
+
         </body>
     </html>

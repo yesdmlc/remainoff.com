@@ -91,6 +91,85 @@ NAVIGATION STYLE
 
 
 /*
+FOOTER STYLE
+*/
+
+
+.site-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #999;
+  margin: 6rem 0 2rem; /* increased top margin for spacing */
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+}
+
+.footer-nav a:hover {
+  color: #000;
+}
+
+.footer-social {
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.footer-social a {
+  text-decoration: none;
+  color: #555;
+}
+
+.footer-social a:hover {
+  color: #000;
+}
+
+.footer-note {
+  font-style: italic;
+  color: #777;
+  font-family: 'Georgia', serif;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .footer-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .footer-note {
+    font-size: 0.75rem;
+    padding: 0 1rem;
+  }
+}
+
+
+
+
+
+/*
 HOMEPAGE STYLE
 */
 
