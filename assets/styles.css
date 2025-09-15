@@ -74,17 +74,32 @@ NAVIGATION STYLE
   .site-nav {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    padding: 1.5rem 1rem;
   }
 
   .site-nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    justify-content: center;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .site-nav ul::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+  .site-nav a {
+    font-size: 0.95rem;
+    white-space: nowrap;
+    padding: 0.5rem 0.25rem;
   }
 
   .logo {
-    margin-right: 0;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
   }
 }
@@ -311,6 +326,32 @@ HOMEPAGE STYLE
     width: auto;
     padding: 0.4rem 1rem;
     font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 601px) {
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    padding: 1.25rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .site-title {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  .site-subtitle {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
   }
 }
 
