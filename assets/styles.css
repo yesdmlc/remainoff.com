@@ -246,6 +246,9 @@ HOMEPAGE STYLE
   .hero-text {
     padding: 1rem 1.5rem;
     width: 90%;
+    background-color: rgba(0, 0, 0, 0.5); /* add contrast */
+    color: #fff;
+    box-shadow: none;
   }
 
   .site-title {
@@ -258,10 +261,12 @@ HOMEPAGE STYLE
 }
 
 @media (max-width: 600px) {
+  @media (max-width: 600px) {
   .hero-text {
     position: static;
     transform: none;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(0, 0, 0, 0.7); /* darker background for contrast */
+    color: #fff;
     padding: 1rem;
     margin-top: 1rem;
     box-shadow: none;
@@ -431,6 +436,10 @@ RECENT ENTRIES — LINEAR FEED
   max-width: 800px;
   margin: 0 auto 4rem;
   padding: 0 1rem;
+}
+
+ul.entry-feed {
+  padding-left: 0 !important;
 }
 
 .section-heading {
