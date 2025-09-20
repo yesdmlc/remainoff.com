@@ -194,77 +194,88 @@ HOMEPAGE STYLE
 
 .hero {
   width: 100%;
-  padding: 2rem 1rem;
-  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.hero-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 2rem;
-}
-
-.hero-image img {
+.hero-image .cover-wrapper {
+  position: relative;
   width: 100%;
-  max-width: 600px;
-  height: auto;
+  max-height: 600px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
   border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.hero-image .entry-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  object-position: center;
+  display: block;
 }
 
 .hero-text {
-  max-width: 500px;
-  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  width: 90%;
+  max-width: 600px;
+  z-index: 2;
 }
 
 .site-title {
   font-size: 2.8rem;
   margin: 0;
   color: #2c2c2c;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  text-shadow: 0 1px 3px rgba(255,255,255,0.6);
 }
 
 .site-subtitle {
   font-size: 1.2rem;
   margin-top: 0.5rem;
-  color: #555;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  color: #444;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.5);
 }
 
-/* Tablet and Mobile */
+/* Tablet */
 @media (max-width: 900px) {
-  .hero-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-image img {
-    max-width: 100%;
-    height: auto;
+  .hero-image .cover-wrapper {
+    aspect-ratio: auto;
+    height: 60vh;
+    max-height: none;
+    border-radius: 0;
   }
 
   .hero-text {
-    max-width: 100%;
-    padding: 1rem 0;
+    padding: 1rem;
+    width: 100%;
+    max-width: none;
   }
 
   .site-title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
   .site-subtitle {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
+  .hero-image .cover-wrapper {
+    height: 50vh;
+  }
+
   .site-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .site-subtitle {
