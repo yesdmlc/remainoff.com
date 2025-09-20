@@ -199,9 +199,12 @@ HOMEPAGE STYLE
 
 .hero-image .cover-wrapper {
   position: relative;
-  width: 100%;
-  height: clamp(400px, 60vh, 700px); /* stays above fold */
+  width: 100vw;
+  height: 60vh;
+  max-height: 700px;
+  min-height: 400px;
   overflow: hidden;
+  border-radius: 0;
 }
 
 .hero-image .entry-thumb {
