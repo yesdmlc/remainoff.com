@@ -85,11 +85,13 @@ NAVIGATION STYLE
     margin-top: 0.5rem;
     padding: 0.5rem 0;
     justify-content: center;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
+    /* Firefox */
   }
 
   .site-nav ul::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+    display: none;
+    /* Chrome, Safari */
   }
 
   .site-nav a {
@@ -114,7 +116,8 @@ FOOTER STYLE
   text-align: center;
   font-size: 0.8rem;
   color: #999;
-  margin: 6rem 0 2rem; /* increased top margin for spacing */
+  margin: 6rem 0 2rem;
+  /* increased top margin for spacing */
   padding-top: 2rem;
   border-top: 1px solid #eee;
 }
@@ -191,85 +194,77 @@ HOMEPAGE STYLE
 
 .hero {
   width: 100%;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
+  gap: 2rem;
 }
 
-.hero-image .cover-wrapper {
-  position: relative;
+.hero-image img {
   width: 100%;
-  height: 100vh;
-  max-height: 800px;
-  overflow: hidden;
-}
-
-.hero-image .entry-thumb {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 6px;
   object-fit: cover;
-  object-position: center;
-  display: block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  padding: 1.5rem 2rem;
-  width: 90%;
-  max-width: 600px;
-  z-index: 2;
+  max-width: 500px;
+  text-align: left;
 }
 
 .site-title {
   font-size: 2.8rem;
   margin: 0;
-  color: #f2f2f2;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  color: #2c2c2c;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .site-subtitle {
   font-size: 1.2rem;
   margin-top: 0.5rem;
-  color: #e0e0e0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  color: #555;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.08);
 }
 
-/* Tablet */
+/* Tablet and Mobile */
 @media (max-width: 900px) {
-  .hero-image .cover-wrapper {
-    height: 80vh;
-    max-height: none;
+  .hero-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
   }
 
   .hero-text {
-    padding: 1rem;
-    width: 100%;
-    max-width: none;
+    max-width: 100%;
+    padding: 1rem 0;
   }
 
   .site-title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .site-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
-  .hero-image .cover-wrapper {
-    height: 70vh;
-  }
-
   .site-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .site-subtitle {
@@ -298,7 +293,7 @@ HOMEPAGE STYLE
   padding: 3rem 1rem;
   margin: 4rem auto;
   border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   max-width: 800px;
 }
 
@@ -452,10 +447,11 @@ ul.entry-feed {
 .cover-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 aspect ratio */
+  padding-top: 56.25%;
+  /* 16:9 aspect ratio */
   overflow: hidden;
   border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 .entry-thumb {
@@ -526,7 +522,8 @@ ul.entry-feed {
   }
 
   .cover-wrapper {
-    padding-top: 75%; /* slightly taller for mobile */
+    padding-top: 75%;
+    /* slightly taller for mobile */
   }
 
   .entry-info {
@@ -557,13 +554,13 @@ SINGLE ENTRY STYLE
   background-color: #f7f7f7;
   padding: 1rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .entry-container:hover {
   background-color: #f0f0f0;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -722,6 +719,7 @@ TAG LISTING + TAG ARCHIVE STYLES
 }
 
 @media (max-width: 600px) {
+
   .tags,
   .tag-block {
     padding: 0 1rem;
@@ -770,7 +768,7 @@ GRID LINK PAGE STYLE
   margin: 0;
 }
 
-  
+
 .grid-item {
   position: relative;
 }
@@ -792,7 +790,7 @@ GRID LINK PAGE STYLE
   left: 0;
   width: 100%;
   padding: 0.5rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
   color: #fff;
   font-size: 0.9rem;
   font-family: 'Georgia', serif;
