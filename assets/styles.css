@@ -283,7 +283,19 @@ HOMEPAGE STYLE
 }
 
 @media (max-width: 600px) {
-  
+  .hero-image .cover-wrapper {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 0;
+    border-radius: 0;
+  }
+  .hero-image .entry-thumb {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+  }
   .hero-text {
     position: absolute;
     top: 50%;
@@ -298,17 +310,11 @@ HOMEPAGE STYLE
     margin-top: 0;
     z-index: 2;
   }
-
   .site-title {
     font-size: 2rem;
   }
-
   .site-subtitle {
     font-size: 1rem;
-  }
-
-  .hero-image .cover-wrapper {
-    padding-top: 75%; /* slightly taller for mobile */
   }
 }
 
