@@ -251,8 +251,8 @@ HOMEPAGE STYLE
   text-shadow: 0 1px 4px rgba(255,255,255,0.5);
 }
 
-/* Mobile */
-@media (max-width: 600px) {
+/* Mobile layout and font adjustments */
+@media (max-width: 900px) {
   .home-cover-wrapper {
     aspect-ratio: auto;
     padding-top: 150%; /* 2:3 vertical crop */
@@ -274,32 +274,6 @@ HOMEPAGE STYLE
 
   .site-subtitle {
     font-size: 1rem;
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .site-title {
-    font-size: 2rem;
-  }
-
-  .site-subtitle {
-    font-size: 1rem;
-  }
-
-  .home-cover-wrapper {
-    aspect-ratio: auto;
-    padding-top: 150%; /* 2:3 ratio */
-  }
-
-  .home-cover-wrapper .entry-thumb {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 }
 
