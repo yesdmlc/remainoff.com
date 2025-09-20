@@ -244,12 +244,34 @@ HOMEPAGE STYLE
 
 @media (max-width: 900px) and (min-width: 601px) {
   .hero-text {
-    padding: 1rem 1.5rem;
-    width: 90%;
-    background-color: rgba(0, 0, 0, 0.5); /* add contrast */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.35); /* lighter overlay */
     color: #fff;
+    padding: 1rem;
+    width: 100%;
     box-shadow: none;
+    border-radius: 0;
+    margin-top: 0;
+    z-index: 2;
   }
+
+    .hero-image .cover-wrapper {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 0;
+    border-radius: 0;
+  }
+  .hero-image .entry-thumb {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+  }
+}
 
   .site-title {
     font-size: 2.4rem;
@@ -261,7 +283,7 @@ HOMEPAGE STYLE
 }
 
 @media (max-width: 600px) {
-  @media (max-width: 600px) {
+  
   .hero-text {
     position: absolute;
     top: 50%;
