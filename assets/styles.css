@@ -203,7 +203,7 @@ HOMEPAGE STYLE
 .hero-image .cover-wrapper {
   position: relative;
   width: 100%;
-  height: 500px; /* fixed height for desktop */
+  height: 500px;
   overflow: hidden;
 }
 
@@ -227,6 +227,7 @@ HOMEPAGE STYLE
   width: 90%;
   max-width: 600px;
   z-index: 2;
+  pointer-events: none; /* prevents accidental clicks */
 }
 
 .site-title {
@@ -246,7 +247,12 @@ HOMEPAGE STYLE
 /* Tablet */
 @media (max-width: 900px) {
   .hero-image .cover-wrapper {
-    height: 50vh;
+    height: auto;
+    aspect-ratio: 2 / 3;
+  }
+
+  .hero-image .entry-thumb {
+    object-position: center center;
   }
 
   .site-title {
@@ -263,6 +269,15 @@ HOMEPAGE STYLE
   .hero-image .cover-wrapper {
     height: 45vh;
   }
+
+  .hero-image .entry-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 
   .site-title {
     font-size: 2rem;
