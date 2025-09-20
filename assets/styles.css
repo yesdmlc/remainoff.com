@@ -201,17 +201,20 @@ HOMEPAGE STYLE
 }
 
 .hero-image .cover-wrapper {
+  position: relative;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  height: 500px; /* fixed height for desktop */
   overflow: hidden;
 }
 
+
 .hero-image .entry-thumb {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
+  position: relative; /* remove absolute */
 }
 
 .hero-text {
